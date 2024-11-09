@@ -1,3 +1,5 @@
+import { NavItem } from '@/types';
+
 export type User = {
   id: number;
   name: string;
@@ -90,7 +92,7 @@ export const users: User[] = [
   },
 ];
 
-export type Medicos = {
+export type Doctors = {
   id: number;
   first_name: string;
   last_name: string;
@@ -109,7 +111,7 @@ export type Medicos = {
   profile_picture?: string | null; // Profile picture can be a string (URL) or null (if no picture)
 };
 
-export type Pacientes = {
+export type Patients = {
   id: number;
   first_name: string;
   last_name: string;
@@ -128,13 +130,49 @@ export type Pacientes = {
   profile_picture?: string | null; // Profile picture can be a string (URL) or null (if no picture)
 };
 
-export type Product = {
-  photo_url: string;
-  name: string;
-  description: string;
-  created_at: string;
-  price: number;
-  id: number;
-  category: string;
-  updated_at: string;
-};
+export const navItems: NavItem[] = [
+  {
+    title: 'Dashboard',
+    url: '/dashboard/',
+    icon: 'dashboard',
+    isActive: false,
+    items: [],
+  },
+  {
+    title: 'Usuarios',
+    url: '#',
+    icon: 'user',
+    isActive: true,
+    items: [
+      {
+        title: 'Doctores',
+        url: '/dashboard/users/doctors',
+        icon: 'userPen',
+      },
+      {
+        title: 'Pacientes',
+        url: '/dashboard/users/patients',
+        icon: 'userPen',
+      },
+    ],
+  },
+  {
+    title: 'Cuenta',
+    url: '#',
+    icon: 'settings',
+    isActive: true,
+
+    items: [
+      {
+        title: 'Perfil',
+        url: '/dashboard/profile',
+        icon: 'userPen',
+      },
+      {
+        title: 'Login',
+        url: '/',
+        icon: 'login',
+      },
+    ],
+  },
+];
