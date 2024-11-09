@@ -90,7 +90,7 @@ export const users: User[] = [
   },
 ];
 
-export type Medicos = {
+export type Doctors = {
   id: number;
   first_name: string;
   last_name: string;
@@ -109,7 +109,7 @@ export type Medicos = {
   profile_picture?: string | null; // Profile picture can be a string (URL) or null (if no picture)
 };
 
-export type Pacientes = {
+export type Patients = {
   id: number;
   first_name: string;
   last_name: string;
